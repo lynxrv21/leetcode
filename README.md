@@ -21,6 +21,11 @@ The solutions are organized by problem categories.
    ```sh
    python generate_problem.py
    ```
+   Optionally, specify complexity:
+   ```sh
+   python generate_problem.py [easy, medium]
+   ```
+3. New template file will be generated, with problem description and test cases
 
 ## Directory Structure
 
@@ -50,19 +55,25 @@ leetcode/
 
 ### Arrays
 - [001_two_sum.py](arrays/001_two_sum.py)
+- 053_maximum_subarray.py
 - [121_best_time_to_buy_and_sell_stock.py](arrays/121_best_time_to_buy_and_sell_stock.py)
 ### Linked Lists
 - [002_add_two_numbers.py](linked_lists/002_add_two_numbers.py)
 - [021_merge_two_sorted_lists.py](linked_lists/021_merge_two_sorted_lists.py)
 - [206_reverse_linked_list.py](linked_lists/206_reverse_linked_list.py)
+- 141_linked_list_cycle.py
 ### Stack
 - [020_valid_parentheses](stack/020_valid_parentheses.py)
 ### Trees
+- 102_binary_tree_level_order_traversal.py
 - [104_maximum_depth_of_binary_tree.py](trees/104_maximum_depth_of_binary_tree.py)
 - [226_invert_binary_tree.py](trees/226_invert_binary_tree.py)
 ### Two Pointers
 - [020_valid_parentheses.py](two_pointers/020_valid_parentheses.py)
-
+### Dynamic Programming
+- 070_climbing_stairs.py
+- 198_house_robber.py
+- 300_longest_increasing_subsequence.py
 
 ## Resources
 
