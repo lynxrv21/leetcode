@@ -1,4 +1,4 @@
-# LeetCode Solutions
+# leetcode
 
 This repository contains my solutions to some of the problems from [LeetCode](https://leetcode.com/). 
 The solutions are organized by problem categories.
@@ -90,3 +90,9 @@ Grokking the System Design Interview - Online course (paid)
 ## Contributing
 
 Contributions are welcome! If you have solutions or improvements to existing ones, feel free to submit a pull request.
+Please check the code before submitting:
+```sh
+python test.py
+black .
+ruff check .
+```

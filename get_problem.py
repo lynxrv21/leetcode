@@ -42,7 +42,7 @@ def create_problem_template(problem_file: Path, output_dir: Path) -> None:
 
         elif problem_statement_flag:
             problem_statement.append(line)
-        elif line.strip() == "if __name__ == \"__main__\":":
+        elif line.strip() == 'if __name__ == "__main__":':
             test_cases_flag = True
             test_cases.append(line)
         elif test_cases_flag:
@@ -65,7 +65,7 @@ def main() -> None:
     if len(sys.argv) > 1:
         complexity = sys.argv[1].lower()
         print(complexity)
-        if complexity not in ('easy', 'medium', 'hard'):
+        if complexity not in ("easy", "medium", "hard"):
             print("Invalid complexity level. Choose from: easy, medium, hard.")
             return
 

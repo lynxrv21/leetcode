@@ -10,7 +10,7 @@ The new list should be made by splicing together the nodes of the first two list
 from linked_lists.utils import ListNode, create_linked_list, get_list_values
 
 
-def merge_two_lists(list1: ListNode|None, list2: ListNode|None) -> ListNode|None:
+def merge_two_lists(list1: ListNode | None, list2: ListNode | None) -> ListNode | None:
     dummy = ListNode(0)
     current = dummy
 

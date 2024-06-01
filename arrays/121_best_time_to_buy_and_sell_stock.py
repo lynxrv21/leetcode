@@ -31,8 +31,8 @@ if __name__ == "__main__":
     result = max_profit([7, 1, 5, 3, 6, 4])
     assert result == 5, result
 
-    result = max_profit([1,2,3,4,5])
+    result = max_profit([1, 2, 3, 4, 5])
     assert result == 4, result
 
-    result = max_profit([7,6,4,3,1])
+    result = max_profit([7, 6, 4, 3, 1])
     assert result == 0, result

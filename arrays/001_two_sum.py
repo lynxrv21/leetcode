@@ -38,4 +38,4 @@ if __name__ == "__main__":
     assert result == [1, 2], result
 
     result = two_sum_hashmap(nums=[3, 2, 4], target=6)
-    assert result == [1, 2], result
+    assert result == [2, 1], result

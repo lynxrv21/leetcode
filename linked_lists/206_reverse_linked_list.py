@@ -31,10 +31,10 @@ def reverse_list_recursive(self, head: ListNode) -> ListNode:
 
 
 if __name__ == "__main__":
-    reversed_list = reverse_list(create_linked_list([1,2,3,4,5]))
+    reversed_list = reverse_list(create_linked_list([1, 2, 3, 4, 5]))
     result = get_list_values(reversed_list)
     assert result == [5, 4, 3, 2, 1], result
 
-    reversed_list = reverse_list(create_linked_list([1,2]))
+    reversed_list = reverse_list(create_linked_list([1, 2]))
     result = get_list_values(reversed_list)
     assert result == [2, 1], result

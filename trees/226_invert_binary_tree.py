@@ -23,6 +23,8 @@ if __name__ == "__main__":
     result = invert_tree(r1)
     assert get_tree_values(result) == [2, 3, 1], result
 
-    r2 = TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7, TreeNode(6), TreeNode(9)))
+    r2 = TreeNode(
+        4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7, TreeNode(6), TreeNode(9))
+    )
     result = invert_tree(r2)
     assert get_tree_values(result) == [4, 7, 2, 9, 6, 3, 1], result
