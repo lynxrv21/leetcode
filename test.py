@@ -1,6 +1,7 @@
 import os
-import subprocess
 from pathlib import Path
+import subprocess
+import sys
 
 
 def run_test_file(file_path: Path) -> tuple[int, str, str]:
@@ -21,8 +22,7 @@ def main():
     problem_files = [
         f
         for f in problem_files
-        if f.name
-        not in ("__init__.py", "utils.py", "test.py", "get_problem.py")
+        if f.name not in ("__init__.py", "utils.py", "run_tests.py")
     ]
 
     all_tests_passed = True
@@ -38,8 +38,10 @@ def main():
 
     if all_tests_passed:
         print("All tests passed!")
+        sys.exit(0)
     else:
         print("Some tests failed.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
