@@ -33,7 +33,9 @@ The solutions are organized by problem categories.
 leetcode/
 ├── arrays
 │   ├── 001_two_sum.py
-│   └── 121_best_time_to_buy_and_sell_stock.py
+│   ├── 121_best_time_to_buy_and_sell_stock.py
+│   ├── 217_contains_duplicate.py
+│   └── 242_valid_anagram.py
 ├── linked_lists
 │   ├── 002_add_two_numbers.py
 │   ├── 021_merge_two_sorted_lists.py
@@ -57,6 +59,8 @@ leetcode/
 - [001_two_sum.py](arrays/001_two_sum.py)
 - 053_maximum_subarray.py
 - [121_best_time_to_buy_and_sell_stock.py](arrays/121_best_time_to_buy_and_sell_stock.py)
+- [217_contains_duplicate.py](arrays/217_contains_duplicate.py)
+- [242_valid_anagram.py](arrays/242_valid_anagram.py)
 ### Linked Lists
 - [002_add_two_numbers.py](linked_lists/002_add_two_numbers.py)
 - [021_merge_two_sorted_lists.py](linked_lists/021_merge_two_sorted_lists.py)
@@ -69,7 +73,7 @@ leetcode/
 - [104_maximum_depth_of_binary_tree.py](trees/104_maximum_depth_of_binary_tree.py)
 - [226_invert_binary_tree.py](trees/226_invert_binary_tree.py)
 ### Two Pointers
-- [020_valid_parentheses.py](two_pointers/020_valid_parentheses.py)
+- [125_valid_palindrome.py](two_pointers/125_valid_palindrome.py)
 ### Dynamic Programming
 - 070_climbing_stairs.py
 - 198_house_robber.py
@@ -92,7 +96,7 @@ Grokking the System Design Interview - Online course (paid)
 Contributions are welcome! If you have solutions or improvements to existing ones, feel free to submit a pull request.
 Please check the code before submitting:
 ```sh
-python test.py
+python run_tests.py
 black .
 ruff check .
 ```

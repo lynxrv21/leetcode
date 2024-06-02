@@ -22,7 +22,7 @@ def main():
     problem_files = [
         f
         for f in problem_files
-        if f.name not in ("__init__.py", "utils.py", "run_tests.py")
+        if f.name not in ("__init__.py", "utils.py", "run_tests.py", "get_problem.py")
     ]
 
     all_tests_passed = True
