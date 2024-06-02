@@ -15,7 +15,7 @@ The solutions are organized by problem categories.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/LeetCodeSolutions.git
+   git clone https://github.com/lynxrv21/leetcode.git
    ```
 2. Get random problem to solve:
    ```sh
