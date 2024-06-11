@@ -98,7 +98,7 @@ def main() -> None:
         if not problem_file:
             print(f"Problem file '{problem_name}.py' not found in any subdirectory.")
             return
-        create_problem_template(problem_file, base_dir)
+
     else:
         problems = get_problem_files(base_dir, complexity)
         if not problems:
