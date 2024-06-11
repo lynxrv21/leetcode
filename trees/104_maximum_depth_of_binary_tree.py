@@ -21,7 +21,7 @@ def max_depth(root: TreeNode | None) -> int:
 
 if __name__ == "__main__":
     r1 = TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
-    assert max_depth(r1) == 3
+    assert max_depth(r1) == 3, r1
 
     r2 = TreeNode(1, None, TreeNode(2))
-    assert max_depth(r2) == 2
+    assert max_depth(r2) == 2, r2
