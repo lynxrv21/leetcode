@@ -21,9 +21,9 @@ The solutions are organized by problem categories.
    ```sh
    python generate_problem.py
    ```
-   Optionally, specify complexity:
+   Optionally, specify complexity or specific problem name:
    ```sh
-   python generate_problem.py [easy, medium]
+   python get_problem.py [-h] [-c {easy,medium,hard}] [-p PROBLEM]
    ```
 3. New template file will be generated, with problem description and test cases
 

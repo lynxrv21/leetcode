@@ -1,4 +1,4 @@
-import sys
+import argparse
 from pathlib import Path
 from random import choice
 
@@ -57,26 +57,57 @@ def create_problem_template(problem_file: Path, output_dir: Path) -> None:
     print(f"Generated problem file: {new_filename}")
 
 
+def setup_parses():
+    parser = argparse.ArgumentParser(
+        description="Generate a problem template from existing LeetCode solutions."
+    )
+    parser.add_argument(
+        "-c",
+        "--complexity",
+        type=str,
+        choices=["easy", "medium", "hard"],
+        help="Specify the complexity level of the problem (easy, medium, hard).",
+    )
+    parser.add_argument(
+        "-p",
+        "--problem",
+        type=str,
+        help="Specify the name of a specific problem file (without .py extension).",
+    )
+    return parser
+
+
+def find_problem_file(problems_dir: Path, problem_name: str) -> Path | None:
+    for subdir in problems_dir.iterdir():
+        if subdir.is_dir():
+            problem_file = subdir / f"{problem_name}.py"
+            if problem_file.exists():
+                return problem_file
+    return None
+
+
 def main() -> None:
+    args = setup_parses().parse_args()
+    complexity = args.complexity
+    problem_name = args.problem
+
     base_dir = Path(__file__).parent
 
-    # Parse the complexity argument if provided
-    complexity = None
-    if len(sys.argv) > 1:
-        complexity = sys.argv[1].lower()
-        print(complexity)
-        if complexity not in ("easy", "medium", "hard"):
-            print("Invalid complexity level. Choose from: easy, medium, hard.")
+    if problem_name:
+        problem_file = find_problem_file(base_dir, problem_name)
+        if not problem_file:
+            print(f"Problem file '{problem_name}.py' not found in any subdirectory.")
+            return
+        create_problem_template(problem_file, base_dir)
+    else:
+        problems = get_problem_files(base_dir, complexity)
+        if not problems:
+            print("No problems found")
             return
 
-    problems = get_problem_files(base_dir, complexity)
-    if not problems:
-        print("No problems found")
-        return
+        problem_file = choice(problems)
 
-    random_problem = choice(problems)
-
-    create_problem_template(random_problem, base_dir)
+    create_problem_template(problem_file, base_dir)
 
 
 if __name__ == "__main__":
