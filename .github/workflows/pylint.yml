@@ -23,10 +23,7 @@ jobs:
       run: pip install black ruff
 
     - name: Run Black
-      run: black --check .
-
-    - name: Run Ruff
-      run: ruff .
+      run: make style
 
     - name: Run Tests
-      run: python run_tests.py
+      run: make test

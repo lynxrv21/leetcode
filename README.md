@@ -105,5 +105,6 @@ Contributions are welcome! If you have solutions or improvements to existing one
 Please check the code before submitting:
 ```sh
 python run_tests.py
+pip install black ruff
 make fmt
 ```
