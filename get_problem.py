@@ -57,9 +57,9 @@ def create_problem_template(problem_file: Path, output_dir: Path) -> None:
     print(f"Generated problem file: {new_filename}")
 
 
-def setup_parses():
+def setup_parser(problem_names: str | list[str]) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Generate a problem template from existing LeetCode solutions."
+        description=f"Generate a problem template from existing LeetCode solutions.\n\nAvailable problems: {problem_names}"
     )
     parser.add_argument(
         "-c",
@@ -86,28 +86,43 @@ def find_problem_file(problems_dir: Path, problem_name: str) -> Path | None:
     return None
 
 
+def get_all_problem_names(problems_dir: Path) -> [str]:
+    problem_names = []
+
+    for subdir in problems_dir.iterdir():
+        if subdir.is_dir():
+            for file in subdir.glob("*.py"):
+                if file.name not in ("__init__.py", "utils.py"):
+                    problem_names.append(file.stem)
+    return problem_names
+
+
 def main() -> None:
-    args = setup_parses().parse_args()
+    base_dir = Path(__file__).parent
+
+    # Get all available problem names for help message
+    all_problem_names = get_all_problem_names(base_dir)
+    all_problem_names_str = ", ".join(all_problem_names)
+
+    args = setup_parser(all_problem_names_str).parse_args()
     complexity = args.complexity
     problem_name = args.problem
-
-    base_dir = Path(__file__).parent
 
     if problem_name:
         problem_file = find_problem_file(base_dir, problem_name)
         if not problem_file:
             print(f"Problem file '{problem_name}.py' not found in any subdirectory.")
+            print(f"Available problems: {all_problem_names_str}")
             return
-
+        create_problem_template(problem_file, base_dir)
     else:
         problems = get_problem_files(base_dir, complexity)
         if not problems:
             print("No problems found")
             return
 
-        problem_file = choice(problems)
-
-    create_problem_template(problem_file, base_dir)
+        random_problem = choice(problems)
+        create_problem_template(random_problem, base_dir)
 
 
 if __name__ == "__main__":
